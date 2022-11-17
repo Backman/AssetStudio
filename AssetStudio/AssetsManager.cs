@@ -393,68 +393,25 @@ namespace AssetStudio
                         Object obj;
                         switch (objectReader.type)
                         {
-                            case ClassIDType.Animation:
-                                obj = new Animation(objectReader);
-                                break;
                             case ClassIDType.AnimationClip:
-                                obj = new AnimationClip(objectReader);
-                                break;
-                            case ClassIDType.Animator:
-                                obj = new Animator(objectReader);
-                                break;
                             case ClassIDType.AnimatorController:
-                                obj = new AnimatorController(objectReader);
-                                break;
                             case ClassIDType.AnimatorOverrideController:
-                                obj = new AnimatorOverrideController(objectReader);
-                                break;
                             case ClassIDType.AssetBundle:
-                                obj = new AssetBundle(objectReader);
+                            case ClassIDType.Avatar:
+                            case ClassIDType.Material:
+                            case ClassIDType.Mesh:
+                            case ClassIDType.MonoScript:
+                            case ClassIDType.MovieTexture:
+                            case ClassIDType.Shader:
+                            case ClassIDType.TextAsset:
+                            case ClassIDType.VideoClip:
+                                obj = new NamedObject(objectReader);
                                 break;
                             case ClassIDType.AudioClip:
                                 obj = new AudioClip(objectReader);
                                 break;
-                            case ClassIDType.Avatar:
-                                obj = new Avatar(objectReader);
-                                break;
                             case ClassIDType.Font:
                                 obj = new Font(objectReader);
-                                break;
-                            case ClassIDType.GameObject:
-                                obj = new GameObject(objectReader);
-                                break;
-                            case ClassIDType.Material:
-                                obj = new Material(objectReader);
-                                break;
-                            case ClassIDType.Mesh:
-                                obj = new Mesh(objectReader);
-                                break;
-                            case ClassIDType.MeshFilter:
-                                obj = new MeshFilter(objectReader);
-                                break;
-                            case ClassIDType.MeshRenderer:
-                                obj = new MeshRenderer(objectReader);
-                                break;
-                            case ClassIDType.MonoBehaviour:
-                                obj = new MonoBehaviour(objectReader);
-                                break;
-                            case ClassIDType.MonoScript:
-                                obj = new MonoScript(objectReader);
-                                break;
-                            case ClassIDType.MovieTexture:
-                                obj = new MovieTexture(objectReader);
-                                break;
-                            case ClassIDType.PlayerSettings:
-                                obj = new PlayerSettings(objectReader);
-                                break;
-                            case ClassIDType.RectTransform:
-                                obj = new RectTransform(objectReader);
-                                break;
-                            case ClassIDType.Shader:
-                                obj = new Shader(objectReader);
-                                break;
-                            case ClassIDType.SkinnedMeshRenderer:
-                                obj = new SkinnedMeshRenderer(objectReader);
                                 break;
                             case ClassIDType.Sprite:
                                 obj = new Sprite(objectReader);
@@ -462,20 +419,8 @@ namespace AssetStudio
                             case ClassIDType.SpriteAtlas:
                                 obj = new SpriteAtlas(objectReader);
                                 break;
-                            case ClassIDType.TextAsset:
-                                obj = new TextAsset(objectReader);
-                                break;
                             case ClassIDType.Texture2D:
                                 obj = new Texture2D(objectReader);
-                                break;
-                            case ClassIDType.Transform:
-                                obj = new Transform(objectReader);
-                                break;
-                            case ClassIDType.VideoClip:
-                                obj = new VideoClip(objectReader);
-                                break;
-                            case ClassIDType.ResourceManager:
-                                obj = new ResourceManager(objectReader);
                                 break;
                             default:
                                 obj = new Object(objectReader);
